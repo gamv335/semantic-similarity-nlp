@@ -1,7 +1,7 @@
 # Import npl library
 import spacy
 
-nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('en_core_web_md')
 
 tokens = nlp('cat apple monkey banana')
 
@@ -69,5 +69,10 @@ en_core_web_md and en_core_web_sm language models:
 * Running the program show how correlated the complaints and recipes areto each other. This means that the 
 model is able to accurately conclude that they belong to the same context. 
 * While, comparing the complaints to the recipe results in expected lower similarity. 
-
+* The first think I ran into with running the simpler model is that a user warning is displayed in the terminal
+explaining that the model does not include word vectors and is limited to context-sensitive tensors.
+* Users are able to include own vectors. However, is noticeable by the output evaluation that the model does not performs 
+very well as it shows hight variability between the values and fails to identify significant relationships. 
+* spaCy documentation validates this as accuracy evaluations shows that en_core_web_md should perform better:
+https://spacy.io/models/en
 """
